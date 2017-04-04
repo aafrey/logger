@@ -1,5 +1,4 @@
 rp = require 'request-promise'
-async = require 'async'
 
 class FaaS
   constructor: (url) ->
@@ -17,3 +16,7 @@ class FaaS
       @options.method = 'POST'
       @options.body = body
       rp(@options)
+
+modules.exports = {
+  FaaS
+}

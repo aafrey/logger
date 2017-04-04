@@ -2,10 +2,10 @@ Chain = require './faas-chain'
 getStdin = require 'get-stdin'
 details = null
 
-submitToAirtable = new Chain 'http://45.76.4.146:8080/function/stack_submitentry'
-lowestIssueCount = new Chain 'http://45.76.4.146:8080/function/stack_lowestissuecount'
-assignRecordTo = new Chain 'http://45.76.4.146:8080/function/stack_assignrecordto'
-updateGithubIssue = new Chain 'http://45.76.4.146:8080/stack_updategithubissue'
+submitToAirtable = new Chain 'https://techlancasterdemo.us/function/stack_submitentry'
+lowestIssueCount = new Chain 'https://techlancasterdemo.us/function/stack_lowestissuecount'
+assignRecordTo = new Chain 'https://techlancasterdemo.us/function/stack_assignrecordto'
+updateGithubIssue = new Chain 'https://techlancasterdemo.us/stack_updategithubissue'
 
 getStdin()
 .then (entry)->
