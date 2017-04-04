@@ -8,13 +8,15 @@ assignRecordTo = new Chain 'https://techlancasterdemo.us/function/stack_assign_r
 updateGithubIssue = new Chain 'https://techlancasterdemo.us/stack_updategithubissue'
 
 getStdin()
-.then (entry)->
+.then (entry) ->
+  entry = JSON.parse entry
   Promise.all [
     submitToAirtable.post(entry),
     lowestIssueCount.post()
   ]
-.then (recordID, leastIssues) ->
-  dataToUpdate =
-    record: recordID
-    assignTo: leastIssues.id
-  assignRecordTo.post(record: recordID, assignTo: leastIssues.id)
+.then (data) -> assignRecordTo.post
+  record: data[0].record
+  assignTo: data[1].user.id
+.then console.log
+.catch console.log.bind console
+# TODO implement assignement in github
