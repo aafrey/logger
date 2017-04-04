@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/aafrey/logger/issues"
   },
-  "homepage": "https://github.com/aafrey/logger#readme"
+  "homepage": "https://github.com/aafrey/logger#readme",
+  "dependencies": {
+    "get-stdin": "^5.0.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  }
 }
