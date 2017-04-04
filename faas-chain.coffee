@@ -17,6 +17,4 @@ class FaaS
       @options.body = body
       rp(@options)
 
-modules.exports = {
-  FaaS
-}
+module.exports = FaaS
